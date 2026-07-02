@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<body>
+  <html>
+    <head>
+        <title>Study Scheduler</title>
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            function addSubject() {
+                
+                var input = document.getElementById("subject-input");
+                var text= input.value;
+                var hours = document.getElementById("hours-input").value;
+
+                if (text === "" || hours === "") {
+
+                    alert("Please enter a subject and hours!");
+                    return;
+                }
+  
+  
+                var list = document.getElementById("subject-list");
+                var newItem = document.createElement("li");
+                newItem.textContent = text + " - " +  hours  + " hours ";
+                list.appendChild(newItem);
+
+                input.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+        <h1>My Study Scheduler</h1>
+        <p>Track your subjects and study time.</p>
+        <h2>My Subjects</h2>
+        <ul id="subject-list"></ul>
+        <input type="text" id="subject-input" placeholder="Enter a subject" />
+        <button onclick="addSubject()">Add Subject</button>
+        <input type="number" id="hours-input" placeholer="Hours" />
+        </div>
+    </body>
+    </html>
